@@ -1,6 +1,28 @@
-<h1>We have several clients filled the form</h1>
-<ul>
-  {% for client in all_clients_list %}
-    <li>{{ client }}</li>
-  {% endfor %}
-</ul>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="page-top-section set-bg" data-setbg="{% static "img/page-top-bg/1.jpg" %}">
+        <div class="container">
+            <h2>Clients</h2>
+            <nav class="site-breadcrumb">
+                <a class="sb-item" href="{% url 'home' %}">Home</a>
+                <span class="sb-item active">Clients</span>
+            </nav>
+        </div>
+    </section>
+    <!-- Page top Section end -->
+    <!-- Score Section end -->
+    <section class="clients-section">
+        <div class="container">
+            <h2>We have several clients filled the form</h2>
+            {% for client in all_clients_list %}
+                <div class="post-entry">
+                    <h2><a href="">{{ client.name }}</a></h2>
+                    <p>{{ client }}</p>
+                </div>>
+          {% endfor %}
+        </div>
+    </section>
+    <!-- Score Section end -->
+{% endblock content %}
